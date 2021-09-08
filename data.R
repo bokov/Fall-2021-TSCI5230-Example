@@ -7,17 +7,16 @@ library(GGally);
 library(rio);
 library(dplyr);
 library(pander);
-library(synthpop);
+#library(synthpop);
 #' Here are the libraries R currently sees:
 search() %>% pander();
 #' Load data
-# dat0 <- import('example_file.xlsx');
-dat0 <- survival::veteran;
+dat0 <- import('data/sim_veteran.xlsx');
 #' Make a scatterplot matrix
 ggpairs(dat0);
 #' Set all the two-value columns to be TRUE/FALSE
 dat1 <- mutate(dat0
-               , across(where( function(xx) length(unique(xx))==2), as.logical));
+               , across(where( function(xx) length(unique(xx))<3), as.factor));
 #' Now try the scatterplot matrix again
 ggpairs(dat1);
 
