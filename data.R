@@ -10,6 +10,7 @@
 #' number_sections: false
 #' keep_md: true
 #' fig_caption: true
+#' css: production.css
 #' output:
 #'   html_document:
 #'    code_folding: hide
